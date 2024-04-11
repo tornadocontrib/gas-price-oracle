@@ -3,9 +3,10 @@ WORKDIR /app
 
 COPY ["package.json", "yarn.lock", "./"]
 
-RUN npm i -g yarn && yarn
+RUN yarn
 
 COPY . .
 
-EXPOSE 7000
+RUN yarn build
+
 ENTRYPOINT ["yarn", "start"]

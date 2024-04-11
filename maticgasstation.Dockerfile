@@ -14,9 +14,12 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 ENV REPO=https://github.com/maticnetwork/maticgasstation
 ENV VERSION=ca8c49c24de98dedac7196b1b07068feeebe856a
 
-RUN git clone $REPO --branch $VERSION && \
+RUN git clone $REPO && \
   cd maticgasstation && \
+  git checkout $VERSION && \
   npm i
+
+WORKDIR /root/maticgasstation
 
 EXPOSE 7000
 

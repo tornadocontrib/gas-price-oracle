@@ -7,7 +7,7 @@
     "types": "tsc --declaration --emitDeclarationOnly",
     "compile": "hardhat compile && hardhat flatten:all",
     "build": "yarn compile && yarn types",
-    "start": "yarn build && ts-node ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "lint": "eslint . --ext .ts --ignore-pattern typechain-types"
   },
   "files": [
