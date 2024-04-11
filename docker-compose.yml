@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  maticgasstation:
+    container_name: maticgasstation
+    image: maticgasstation
+    restart: always
+    stop_grace_period: 30m
+    environment:
+      - POS_RPC=https://polygon-mainnet.chainnodes.org/d692ae63-0a7e-43e0-9da9-fe4f4cc6c607
+      - ZKEVM_RPC=https://1rpc.io/polygon/zkevm
+      - PORT=7000
+      - SAFE=30
+      - STANDARD=32
+      - FAST=50
+      - HISTORY_BLOCKS=15
+    build:
+      context: .
+      dockerfile: maticgasstation.Dockerfile
+    expose:
+      - '127.0.0.1:7000:7000'
+
+  gaspriceoracle:
+    container_name: gaspriceoracle
+    image: gaspriceoracle
+    restart: always
+    stop_grace_period: 30m
+    env_file:
+      -  ./docker.env
+    build:
+      context: .
+    expose:
+      - '127.0.0.1:7000:7000'
