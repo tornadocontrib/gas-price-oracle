@@ -8,7 +8,7 @@
     "compile": "hardhat compile && hardhat flatten:all",
     "build": "yarn compile && yarn types",
     "start": "ts-node ./src/index.ts",
-    "lint": "eslint . --ext .ts --ignore-pattern typechain-types"
+    "lint": "eslint . --ext .ts"
   },
   "files": [
     "contracts",

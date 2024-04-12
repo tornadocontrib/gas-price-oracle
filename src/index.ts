@@ -1,6 +1,6 @@
 import { JsonRpcProvider, Wallet, HDNodeWallet, BaseContract, parseUnits } from 'ethers';
 import { GasPriceOracle, GasPriceOracle__factory, Multicall3, Multicall3__factory } from '../typechain-types';
-import "dotenv/config"
+import 'dotenv/config';
 
 const ORACLE_ADDRESS = process.env.ORACLE_ADDRESS || '0xF81A8D8D3581985D3969fe53bFA67074aDFa8F3C';
 

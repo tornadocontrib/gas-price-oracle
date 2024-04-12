@@ -5,7 +5,7 @@ services:
     container_name: maticgasstation
     image: maticgasstation
     restart: always
-    stop_grace_period: 30m
+    stop_grace_period: 1m
     environment:
       - POS_RPC=https://polygon-mainnet.chainnodes.org/d692ae63-0a7e-43e0-9da9-fe4f4cc6c607
       - ZKEVM_RPC=https://1rpc.io/polygon/zkevm
@@ -30,7 +30,7 @@ services:
     container_name: gaspriceoracle
     image: gaspriceoracle
     restart: always
-    stop_grace_period: 30m
+    stop_grace_period: 1m
     env_file:
       -  ./docker.env
     build:

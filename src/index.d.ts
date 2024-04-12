@@ -1,5 +1,5 @@
 import { BaseContract } from 'ethers';
-import "dotenv/config";
+import 'dotenv/config';
 export interface gasstation {
     standard: {
         maxPriorityFee: number;

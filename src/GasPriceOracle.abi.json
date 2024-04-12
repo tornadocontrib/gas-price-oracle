@@ -1,26 +1,3 @@
-# gas-price-oracle
-
-Decentralized Gas Price Oracle that proxies recommended fee value from [polygon gas station](https://docs.polygon.technology/tools/gas/polygon-gas-station/#mainnet)
-
-### Mainnet
-
-0xf81a8d8d3581985d3969fe53bfa67074adfa8f3c
-
-https://polygonscan.com/address/0xf81a8d8d3581985d3969fe53bfa67074adfa8f3c#readContract
-
-### What is gas-price-oracle?
-
-Gas price oracle is a decentralized proxy of gas station for polygon mainnet. It would update the recommended maxPriorityFeePerGas value to contracts which should be parsed from the GasPriceOracle contract.
-
-One of the benefits of the GasPriceOracle contract is that it doesn't require centralized gas station API that would track your user-agent headers https://github.com/ethers-io/ethers.js/blob/main/src.ts/providers/network.ts#L327, or block requests very often https://github.com/ethers-io/ethers.js/issues/4320.
-
-This would also ensure faster gas price fetching since it resolves all the necessary data by a single request. Also, there are necessary timestamp and heartbeat configuation that you could make a refer of.
-
-You can see example/index.ts to see examples to integrate with ethers.js provider. In order to deploy on alternative chain or if you are seeking to modify the source code of the server you can refer contracts and src folder.
-
-## ABI
-
-```
 [
   {
     "inputs": [],
@@ -210,4 +187,3 @@ You can see example/index.ts to see examples to integrate with ethers.js provide
     "type": "function"
   }
 ]
-```
