@@ -8,6 +8,7 @@
     "compile": "hardhat compile && hardhat flatten:all",
     "build": "yarn compile && yarn types",
     "start": "ts-node ./src/index.ts",
+    "start:example": "ts-node ./example/index.ts",
     "lint": "eslint . --ext .ts"
   },
   "files": [
