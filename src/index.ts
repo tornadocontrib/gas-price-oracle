@@ -96,8 +96,8 @@ async function updateOracle() {
     const currentMaxFee = parseInt(`${gasData.maxFee}`);
     const currentPriorityFee = parseInt(`${gasData.maxPriorityFee}`);
   
-    const isInRange = currentPriorityFee * Number(derivationThresold) / 100 <= Number(pastGasPrice)
-      && currentPriorityFee * (100 + Number(derivationThresold)) / 100 >= Number(pastGasPrice);
+    const isInRange = Number(pastGasPrice) * (100 - Number(derivationThresold)) / 100 <= currentPriorityFee
+      && Number(pastGasPrice) * (100 + Number(derivationThresold)) / 100 >= currentPriorityFee;
   
     const isOutdated = Number(timestamp) <= (Date.now() / 1000) - Number(heartbeat) + (UPDATE_INTERVAL * 2);
   
