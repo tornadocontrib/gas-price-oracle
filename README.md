@@ -1,5 +1,9 @@
 # gas-price-oracle
 
+### Deprecated
+
+Use `eth_maxPriorityFeePerGas` or `eth_feeHistory` RPC method instead ( they are the same thing anyways )
+
 Decentralized Gas Price Oracle that proxies recommended fee value from [polygon gas station](https://docs.polygon.technology/tools/gas/polygon-gas-station/#mainnet)
 
 ### Mainnet
